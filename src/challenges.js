@@ -61,26 +61,26 @@ function fizzBuzz(numeros) {
     } else if (number % 3 !== 0 && number % 5 !== 0) {
       novoArray.push('bug!');
     }
-  return(novoArray);
+  return (novoArray);
 }
 
 // Desafio 9
 function encode(stringEncode) {
-  newPhrase = stringEncode.replace('a', '1');
-  newPhrase = stringEncode.replace('e', '2');
-  newPhrase = stringEncode.replace('i', '3');
-  newPhrase = stringEncode.replace('o', '4');
-  newPhrase = stringEncode.replace('u', '5');
-  return (newPhrase);
+  stringEncode = stringEncode.replace(/a/g, '1');
+  stringEncode = stringEncode.replace(/e/g, '2');
+  stringEncode = stringEncode.replace(/i/g, '3');
+  stringEncode = stringEncode.replace(/o/g, '4');
+  stringEncode = stringEncode.replace(/u/g, '5');
+  return (stringEncode);
 }
 
 function decode(stringDecode) {
-  newPhrase2 = stringDecode.replace('1', 'a');
-  newPhrase2 = stringDecode.replace('2', 'e');
-  newPhrase2 = stringDecode.replace('3', 'i');
-  newPhrase2 = stringDecode.replace('4', 'o');
-  newPhrase2 = stringDecode.replace('5', 'u');
-  return (newPhrase2);
+  stringDecode = stringDecode.replace(/1/g, 'a');
+  stringDecode = stringDecode.replace(/2/g, 'e');
+  stringDecode = stringDecode.replace(/3/g, 'i');
+  stringDecode = stringDecode.replace(/4/g, 'o');
+  stringDecode = stringDecode.replace(/5/g, 'u');
+  return (stringDecode);
 }
 
 module.exports = {
