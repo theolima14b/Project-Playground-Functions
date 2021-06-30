@@ -63,6 +63,8 @@ function fizzBuzz(numeros) {
     }
   return (novoArray);
 }
+}
+
 
 // Desafio 9
 function encode(stringEncode) {
