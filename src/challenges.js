@@ -33,8 +33,8 @@ function footballPoints(wins, ties) {
 // Desafio 6
 function highestCount(numeros) {
   let counter = 0;
-  let emOrdem = numeros.sort((a,b) => a-b)
-  let maiorNumero = emOrdem[emOrdem.length - 1]
+  let emOrdem = numeros.sort((a,b) => a-b);
+  let maiorNumero = emOrdem[emOrdem.length - 1];
   for (let index = 0; index < numeros.length; index += 1) {
     if (numeros[index] === maiorNumero) {
       counter += 1;
@@ -65,11 +65,22 @@ function fizzBuzz(numeros) {
 }
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+function encode(stringEncode) {
+  newPhrase = stringEncode.replace('a', '1');
+  newPhrase = stringEncode.replace('e', '2');
+  newPhrase = stringEncode.replace('i', '3');
+  newPhrase = stringEncode.replace('o', '4');
+  newPhrase = stringEncode.replace('u', '5');
+  return (newPhrase);
 }
-function decode() {
-  // seu código aqui
+
+function decode(stringDecode) {
+  newPhrase2 = stringDecode.replace('1', 'a');
+  newPhrase2 = stringDecode.replace('2', 'e');
+  newPhrase2 = stringDecode.replace('3', 'i');
+  newPhrase2 = stringDecode.replace('4', 'o');
+  newPhrase2 = stringDecode.replace('5', 'u');
+  return (newPhrase2);
 }
 
 module.exports = {
