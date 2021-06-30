@@ -51,7 +51,7 @@ function catAndMouse() {
 // Desafio 8
 function fizzBuzz(numeros) {
   let novoArray = [];
-  for (let number of numeros) {
+  for (let number of numeros)
     if (number % 3 === 0 && number % 5 !== 0) {
       novoArray.push('fizz');
     } else if (number % 5 === 0 && number % 3 !== 0) {
@@ -63,8 +63,6 @@ function fizzBuzz(numeros) {
     }
   return (novoArray);
 }
-}
-
 
 // Desafio 9
 function encode(stringEncode) {
