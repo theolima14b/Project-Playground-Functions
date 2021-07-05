@@ -1,6 +1,13 @@
 // Desafio 10
 function techList(tech, name) {
-
+  let listaDeTecs = [];
+  if (array.length <= 0) {
+    return 'Vazio!';
+  }
+  for (let i in arrayTecs) {
+    listaDeTecs[i] = { tech: arrayTecs[i], nome: name };
+  }
+  return listaDeTecs;
 }
 
 // Desafio 11
