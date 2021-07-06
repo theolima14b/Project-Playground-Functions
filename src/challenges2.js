@@ -32,8 +32,10 @@ function generatePhoneNumber(numbers) {
       if (repeat > 0) {
         return ('não é possível gerar um número de telefone com esses valores');
       }
+    }
   }
 }
+
 // Desafio 12
 function triangleCheck() {
   // seu código aqui

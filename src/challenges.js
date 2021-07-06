@@ -9,7 +9,6 @@ function compareTrue(value1, value2) {
 // Desafio 2
 
 function calcArea(base, height) {
-  // eslint-disable-next-line no-shadow
   let areaTriangulo = (base * height) / 2;
   return areaTriangulo;
 }
