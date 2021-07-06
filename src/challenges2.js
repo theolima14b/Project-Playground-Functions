@@ -20,9 +20,7 @@ function techList(tech, name) {
 function checkZeroNine(numbers) {
   let returnTrue = 0;
   for (let i = 0; i < numbers.length; i += 1) {
-    if (numbers[i] < 0) {
-      returnTrue += 1;
-    } if (numbers[i] > 9) {
+    if (numbers[i] < 0 || numbers[i] > 9) {
       returnTrue += 1;
     }
   }
@@ -45,7 +43,7 @@ function checkPhoneNumber(numbers) {
   } return (true);
 }
 
-let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1];
+
 function generatePhoneNumber(numbers) {
   if (checkPhoneNumber(numbers) === true && checkZeroNine(numbers) === true) {
     return 'Você está conseguindo';
