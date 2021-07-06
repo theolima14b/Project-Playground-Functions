@@ -43,13 +43,24 @@ function checkPhoneNumber(numbers) {
   } return (true);
 }
 
-let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1];
+function formatNumber(numbers) {
+  let DDD = String(numbers[0]) + String(numbers[1]);
+  let firstHalf = String(numbers[2]) + String(numbers[3]) + String(numbers[4]) + String(numbers[5]) + String(numbers[6]);
+  let secondHalf = String(numbers[7]) + String(numbers[8]) + String(numbers[9]) + String(numbers[10]);
+  return (`(${DDD}) ${firstHalf}-${secondHalf}`);
+}
+
 function generatePhoneNumber(numbers) {
-  if (checkPhoneNumber(numbers) === true || checkZeroNine(numbers) === true) {
-    return 'Você está conseguindo';
+  if (numbers.length !== 11) {
+    return 'Array com tamanho incorreto.';
+  }
+  for (index = 0; index < numbers.length; index += 1) {
+    if (checkPhoneNumber(numbers) === true && checkZeroNine(numbers) === true) {
+      return formatNumber(numbers);
+    }
+    return 'não é possível gerar um número de telefone com esses valores';
   }
 }
-console.log(generatePhoneNumber(numbers));
 
 // Desafio 12
 function triangleCheck() {
@@ -58,7 +69,7 @@ function triangleCheck() {
 
 // Desafio 13
 function hydrate() {
-  // seu código aqui
+  // seu código aquilet numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1];
 }
 
 module.exports = {
