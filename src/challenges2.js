@@ -53,13 +53,10 @@ function formatNumber(numbers) {
 function generatePhoneNumber(numbers) {
   if (numbers.length !== 11) {
     return 'Array com tamanho incorreto.';
+  } if (checkPhoneNumber(numbers) === true && checkZeroNine(numbers) === true) {
+    return formatNumber(numbers);
   }
-  for (index = 0; index < numbers.length; index += 1) {
-    if (checkPhoneNumber(numbers) === true && checkZeroNine(numbers) === true) {
-      return formatNumber(numbers);
-    }
-    return 'não é possível gerar um número de telefone com esses valores';
-  }
+  return 'não é possível gerar um número de telefone com esses valores';
 }
 
 // Desafio 12
