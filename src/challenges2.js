@@ -1,3 +1,6 @@
+/* eslint-disable max-len */
+/* eslint-disable sonarjs/cognitive-complexity */
+/* eslint-disable complexity */
 // Desafio 10
 
 const techList = (arrayOfTech, name) => {
@@ -15,22 +18,9 @@ const techList = (arrayOfTech, name) => {
   return newListOfTech;
 };
 
-console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Lucas'));
-
 // Desafio 11
-function checkZeroNine(numbers) {
-  let returnTrue = 0;
-  for (let i = 0; i < numbers.length; i += 1) {
-    if (numbers[i] < 0 || numbers[i] > 9) {
-      returnTrue += 1;
-    }
-  }
-  if (returnTrue !== 0) {
-    return ('não é possível gerar um número de telefone com esses valores');
-  } return true;
-}
 
-function checkPhoneNumber(numbers) {
+function validateNumber(numbers) {
   let repeat = 0;
   for (let x = 0; x < numbers.length; x += 1) {
     for (let y = 0; y < numbers.length; y += 1) {
@@ -38,10 +28,10 @@ function checkPhoneNumber(numbers) {
         repeat += 1;
       }
     }
-    if (repeat >= 3) {
-      return (false);
+    if (repeat >= 3 || numbers[x] < 0 || numbers[x] > 9) {
+      return false;
     } repeat = 0;
-  } return (true);
+  } return true;
 }
 
 function formatNumber(numbers) {
@@ -51,16 +41,14 @@ function formatNumber(numbers) {
   return (`(${DDD}) ${firstHalf}-${secondHalf}`);
 }
 
-let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1];
 function generatePhoneNumber(numbers) {
   if (numbers.length !== 11) {
     return 'Array com tamanho incorreto.';
-  } if (checkPhoneNumber(numbers) === true && checkZeroNine(numbers) === true) {
+  } if (validateNumber(numbers) === true) {
     return formatNumber(numbers);
   }
   return 'não é possível gerar um número de telefone com esses valores';
 }
-console.log(generatePhoneNumber(numbers));
 
 // Desafio 12
 function triangleCheck() {
