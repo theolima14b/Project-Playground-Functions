@@ -1,20 +1,21 @@
 // Desafio 10
-function techList(tech, name) {
-  let newList = [];
-  let techSort = tech.sort();
-  if (techSort.length > 0) {
-    for (let index = 0; index < techSort.length; index += 1) {
-      let technology = {
-        tech: techSort[index],
-        name,
-      };
-      newList.push(technology);
-    }
-  } else {
-    return 'Vazio!';
-  }
-  return newList;
-}
+
+const techList = (arrayOfTech, name) => {
+  if (arrayOfTech.length === 0) return 'Vazio!';
+
+  const newListOfTech = [];
+  const sortedTechs = arrayOfTech.sort();
+  sortedTechs.forEach((tech) => {
+    newListOfTech.push({
+      tech,
+      name,
+    });
+  });
+
+  return newListOfTech;
+};
+
+console.log(techList(['React', 'Jest', 'HTML', 'CSS', 'JavaScript'], 'Lucas'));
 
 // Desafio 11
 function checkZeroNine(numbers) {
@@ -49,6 +50,7 @@ function formatNumber(numbers) {
   let secondHalf = String(numbers[7]) + String(numbers[8]) + String(numbers[9]) + String(numbers[10]);
   return (`(${DDD}) ${firstHalf}-${secondHalf}`);
 }
+
 let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1];
 function generatePhoneNumber(numbers) {
   if (numbers.length !== 11) {

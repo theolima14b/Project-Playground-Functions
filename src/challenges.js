@@ -30,12 +30,12 @@ function footballPoints(wins, ties) {
 }
 
 // Desafio 6
-function highestCount(numeros) {
+function highestCount(number) {
   let counter = 0;
-  let emOrdem = numeros.sort((a, b) => a - b);
-  let maiorNumero = emOrdem[emOrdem.length - 1];
-  for (let index = 0; index < numeros.length; index += 1) {
-    if (numeros[index] === maiorNumero) {
+  let sortedNumers = number.sort((a, b) => a - b);
+  let highestNumber = sortedNumers[sortedNumers.length - 1];
+  for (let index = 0; index < number.length; index += 1) {
+    if (number[index] === highestNumber) {
       counter += 1;
     }
   }
@@ -43,54 +43,60 @@ function highestCount(numeros) {
 }
 
 // Desafio 7
+
 function catAndMouse(mouse, cat1, cat2) {
   let distance1 = Math.abs(mouse - cat1);
   let distance2 = Math.abs(mouse - cat2);
-  let closer = '';
+
   if (distance1 > distance2) {
-    closer = 'cat2';
-  } else if (distance1 < distance2) {
-    closer = 'cat1';
-  } else {
-    closer = 'os gatos trombam e o rato foge';
+    return 'cat2';
   }
-  return closer;
+  if (distance1 < distance2) {
+    return 'cat1';
+  }
+
+  return 'os gatos trombam e o rato foge';
 }
 
+console.log(catAndMouse(0, 2, 2));
+
 // Desafio 8
-function fizzBuzz(numeros) {
-  let novoArray = [];
-  for (let number of numeros) {
-    if (number % 3 === 0 && number % 5 !== 0) {
-      novoArray.push('fizz');
-    } else if (number % 5 === 0 && number % 3 !== 0) {
-      novoArray.push('buzz');
-    } else if (number % 3 === 0 && number % 5 === 0) {
-      novoArray.push('fizzBuzz');
-    } else if (number % 3 !== 0 && number % 5 !== 0) {
-      novoArray.push('bug!');
+
+function fizzBuzz(arrayOfNumbers) {
+  let newArray = [];
+  arrayOfNumbers.forEach((number) => {
+    if (number % 3 === 0 && number % 5 === 0) {
+      return newArray.push('fizzBuzz');
     }
-  }
-  return (novoArray);
+    if (number % 3 === 0) {
+      return newArray.push('fizz');
+    }
+    if (number % 5 === 0) {
+      return newArray.push('buzz');
+    }
+    return newArray.push('bug!');
+  });
+  return newArray;
 }
 
 // Desafio 9
-function encode(stringEncode) {
-  stringEncode = stringEncode.replace(/a/g, '1');
-  stringEncode = stringEncode.replace(/e/g, '2');
-  stringEncode = stringEncode.replace(/i/g, '3');
-  stringEncode = stringEncode.replace(/o/g, '4');
-  stringEncode = stringEncode.replace(/u/g, '5');
-  return (stringEncode);
+
+function encode(encodedString) {
+  encodedString = encodedString.replace(/a/g, '1');
+  encodedString = encodedString.replace(/e/g, '2');
+  encodedString = encodedString.replace(/i/g, '3');
+  encodedString = encodedString.replace(/o/g, '4');
+  encodedString = encodedString.replace(/u/g, '5');
+  return (encodedString);
 }
 
-function decode(stringDecode) {
-  stringDecode = stringDecode.replace(/1/g, 'a');
-  stringDecode = stringDecode.replace(/2/g, 'e');
-  stringDecode = stringDecode.replace(/3/g, 'i');
-  stringDecode = stringDecode.replace(/4/g, 'o');
-  stringDecode = stringDecode.replace(/5/g, 'u');
-  return (stringDecode);
+function decode(decodedString) {
+  decodedString = decodedString.replace(/1/g, 'a');
+  decodedString = decodedString.replace(/2/g, 'e');
+  decodedString = decodedString.replace(/3/g, 'i');
+  decodedString = decodedString.replace(/4/g, 'o');
+  decodedString = decodedString.replace(/5/g, 'u');
+  return (decodedString);
 }
 
 module.exports = {
